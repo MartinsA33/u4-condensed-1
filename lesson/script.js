@@ -69,7 +69,13 @@ generateButton.addEventListener("click", function() {
   // Follow the same pattern: let ____ = document.querySelector("#____").value;
 
   // Your code here:
+let verb=document.querySelector("#verb").value;
+let place= document.querySelector("#place").value;
+let number=document.querySelector("#number").value;
 
+console.log("Verb:", verb);
+console.log("Place:", place);
+console.log("Number:", number);
 
 
   // **********************************************************
@@ -95,9 +101,9 @@ generateButton.addEventListener("click", function() {
   // [noun] the whole time."
 
   // Your code here (replace firstSentence with your full story):
+let fullStory=`Deep inside the codebase lives a ${adjective} bug that's been hiding for ${number} days. ${name} grabs their debugger and ventures into ${place} to hunt it down, only to discover the bug can ${verb} and has been disguising itself as an innocent ${noun} the whole time`;
 
-
-
+document.querySelector("#story").innerHTML=fullStory;
   // **********************************************************
   // YOUR TURN - Step 4: Display the complete story
   // **********************************************************
@@ -105,7 +111,9 @@ generateButton.addEventListener("click", function() {
   // (You might have already done this in Step 3 - that's fine!)
 
   // Your code here:
-
+ let days= Number(document.querySelector("#number").value);
+let hours= days*24;
+console.log("Hours:", hours );
 
 });
 
@@ -125,7 +133,17 @@ generateButton.addEventListener("click", function() {
 // 2. Add a click event listener
 // 3. Set each input's .value to ""
 // 4. Clear the story output too
-
+let Clear= document.querySelector("#clear");
+Clear.addEventListener("click",  ()=>{
+ 
+  document.querySelector("#name").value ="";
+ document.querySelector("#adjective").value="";
+  document.querySelector("#noun").value="";
+  document.querySelector("#verb").value="";
+  document.querySelector("#place").value="";
+  document.querySelector("#number").value="";
+  document.querySelector("#story").innerHTML="";
+});
 
 // STRETCH 3: Use Number() with the number input
 // Hint: let days = Number(number);
